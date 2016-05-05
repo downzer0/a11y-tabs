@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Tab component</title>
+    <link rel="stylesheet" href="tabs.css">
+</head>
+<body>
+    <h1>Tab component</h1>
+    
+    <ul role="tablist" class="tabs">
+        <li role="presentation" class="tab-item">
+            <button type="button" role="tab" class="tab is-active" aria-selected="true" aria-controls="one">One</button>
+        </li>
+        <li role="presentation" class="tab-item">
+            <button type="button" role="tab" class="tab" aria-selected="false" aria-controls="two">Two</button>
+        </li>
+        <li role="presentation" class="tab-item">
+            <button type="button" role="tab" class="tab" aria-selected="false" aria-controls="three">Three</button>
+        </li>
+    </ul>
+    
+    <div role="tabpanel" id="one" class="tab-panel is-active" tabindex="-1">
+        <h2>One</h2>
+        <p>
+            Amen, amen. But come what sorrow can,
+            It cannot countervail the exchange of joy
+            That one short minute gives me in her sight.
+            Do thou but close our hands with holy words,
+            Then love-devouring death do what he dare;
+            It is enough I may but call her mine.
+        </p>
+    </div>
+    <div role="tabpanel" id="two" class="tab-panel" tabindex="-1">
+        <h2>Two</h2>
+        <p>
+            These violent delights have violent ends
+            And in their triumph die, like fire and powder,
+            Which, as they kiss, consume. The sweetest honey
+            Is loathsome in his own deliciousness
+            And in the taste confounds the appetite.
+            Therefore love moderately. Long love doth so.
+            Too swift arrives as tardy as too slow.
+        </p>
+    </div>
+    <div role="tabpanel" id="three" class="tab-panel" tabindex="-1">
+        <h2>Three</h2>
+        <p>
+            Here comes the lady. Oh, so light a foot
+            Will ne'er wear out the everlasting flint.
+            A lover may bestride the gossamers
+            That idles in the wanton summer air,
+            And yet not fall. So light is vanity.
+        </p>
+    </div>
+    
+    <script src="jquery.js"></script>
+    <script src="tabs.js"></script>
+</body>
+</html>

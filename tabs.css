@@ -1,0 +1,21 @@
+body {
+  font-size: 1.5em; }
+
+.tabs {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+  .tabs .tab-item {
+    display: inline; }
+    .tabs .tab-item .tab {
+      border: 2px solid gray;
+      background: whiteSmoke;
+      font-size: 1.5rem; }
+      .tabs .tab-item .tab.is-active {
+        border-color: pink;
+        color: blue; }
+
+.tab-panel {
+  display: none; }
+  .tab-panel.is-active {
+    display: block; }
