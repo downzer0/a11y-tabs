@@ -1,4 +1,6 @@
 $(function() {
+    'use strict';
+
     var keys = {
         'left':     37,
         'right':    39,
@@ -57,12 +59,12 @@ $(function() {
                 switch (key) {
                     case keys.left:
                     case keys.up:
-                        Tabs.previousTab(focused, index, total);
+                        Tabs.previousTab(focused, index, total, e);
                         break;
                         
                     case keys.right:
                     case keys.down:
-                        Tabs.nextTab(focused, index, total);
+                        Tabs.nextTab(focused, index, total, e);
                         break;
                         
                     default:
@@ -81,9 +83,7 @@ $(function() {
             });
         },
         
-        previousTab: function(focused, index, total) {
-            event.preventDefault();
-            
+        previousTab: function(focused, index, total, event) {            
             var tab, panel;
 
             if (event.altKey || event.shiftKey) {
@@ -105,9 +105,7 @@ $(function() {
             return false;
         },
         
-        nextTab: function(focused, index, total) {
-            event.preventDefault();
-
+        nextTab: function(focused, index, total, event) {
             var tab, panel;
 
             if (event.altKey || event.shiftKey) {
