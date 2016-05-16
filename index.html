@@ -9,17 +9,17 @@
     
     <ul role="tablist" class="tabs">
         <li role="presentation" class="tab-item">
-            <button type="button" role="tab" class="tab is-active" aria-selected="true" aria-controls="one" tabindex="0">One</button>
+            <button type="button" id="tab-one" role="tab" class="tab is-active" aria-controls="one" aria-selected="true" aria-controls="one" tabindex="0">One</button>
         </li>
         <li role="presentation" class="tab-item">
-            <button type="button" role="tab" class="tab" aria-selected="false" aria-controls="two" tabindex="-1">Two</button>
+            <button type="button" id="tab-two" role="tab" class="tab" aria-controls="two" aria-selected="false" aria-controls="two" tabindex="-1">Two</button>
         </li>
         <li role="presentation" class="tab-item">
-            <button type="button" role="tab" class="tab" aria-selected="false" aria-controls="three" tabindex="-1">Three</button>
+            <button type="button" id="tab-three" role="tab" class="tab" aria-controls="three" aria-selected="false" aria-controls="three" tabindex="-1">Three</button>
         </li>
     </ul>
     
-    <div role="tabpanel" id="one" class="tab-panel is-active" tabindex="0">
+    <div role="tabpanel" id="one" class="tab-panel is-active" aria-labelledby="tab-one" aria-hidden="false" tabindex="0">
         <h2>One</h2>
         <p>
             Amen, amen. But come what sorrow can,
@@ -31,7 +31,7 @@
             It is enough I may but call her mine.
         </p>
     </div>
-    <div role="tabpanel" id="two" class="tab-panel" tabindex="-1">
+    <div role="tabpanel" id="two" class="tab-panel" aria-labelledby="tab-two" aria-hidden="true" tabindex="-1">
         <h2>Two</h2>
         <p>
             These violent delights have violent ends
@@ -44,7 +44,7 @@
             Too swift arrives as tardy as too slow.
         </p>
     </div>
-    <div role="tabpanel" id="three" class="tab-panel" tabindex="-1">
+    <div role="tabpanel" id="three" class="tab-panel" aria-labelledby="tab-three" aria-hidden="true" tabindex="-1">
         <h2>Three</h2>
         <p>
             Here comes the lady. Oh, so light a foot
