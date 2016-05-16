@@ -7,20 +7,18 @@ body {
     padding: 0;
     list-style: none;
     
-    .tab-item {
+    .tab {
         display: inline;
+        border: 2px solid gray;
+        padding: .5em;
+        background: whiteSmoke;
+        font-size: 1.5rem;
+        cursor: pointer;
         
-        .tab {
-            border: 2px solid gray;
-            background: whiteSmoke;
-            font-size: 1.5rem;
-            cursor: pointer;
-            
-            &.is-active {
-                border-color: pink;
-                color: blue;
-                cursor: default;
-            }
+        &.is-active {
+            border-color: pink;
+            color: blue;
+            cursor: default;
         }
     }
 }

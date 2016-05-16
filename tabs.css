@@ -5,17 +5,17 @@ body {
   margin: 0;
   padding: 0;
   list-style: none; }
-  .tabs .tab-item {
-    display: inline; }
-    .tabs .tab-item .tab {
-      border: 2px solid gray;
-      background: whiteSmoke;
-      font-size: 1.5rem;
-      cursor: pointer; }
-      .tabs .tab-item .tab.is-active {
-        border-color: pink;
-        color: blue;
-        cursor: default; }
+  .tabs .tab {
+    display: inline;
+    border: 2px solid gray;
+    padding: .5em;
+    background: whiteSmoke;
+    font-size: 1.5rem;
+    cursor: pointer; }
+    .tabs .tab.is-active {
+      border-color: pink;
+      color: blue;
+      cursor: default; }
 
 .tab-panel {
   display: none; }
