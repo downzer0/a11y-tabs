@@ -22,7 +22,10 @@ $(function() {
             $('.tabs .tab').each(function(i, el) {
                 var tab = $(el);
                 
-                $(tab).removeClass('is-active').attr('aria-selected', 'false');
+                $(tab).removeClass('is-active').attr({
+                    'aria-selected': 'false',
+                    'tabindex': '-1'
+                });
             });
             
             Tabs.resetTabPanels();
@@ -32,7 +35,9 @@ $(function() {
             $('.tab-panel').each(function(i, el) {
                 var panel = $(el);
                 
-                $(panel).removeClass('is-active');
+                $(panel)
+                    .removeClass('is-active')
+                    .attr('tabindex', '-1');
             });
         },
 
@@ -46,15 +51,13 @@ $(function() {
                 
                 switch (key) {
                     case keys.left:
+                    case keys.up:
                         Tabs.previousTab(focused, index, total);
                         break;
                         
                     case keys.right:
-                        Tabs.nextTab(focused, index, total);
-                        break;
-                        
                     case keys.down:
-                        Tabs.enterTabPanel(panel);
+                        Tabs.nextTab(focused, index, total);
                         break;
                         
                     default:
@@ -121,14 +124,16 @@ $(function() {
             return false;
         },
         
-        enterTabPanel: function(panel) {
-            $('#' + panel).focus();
-        },
-        
         activateTab: function(tab, panel) {
             Tabs.resetTabs();
             Tabs.activateTabPanel(panel);
-            $(tab).addClass('is-active').attr('aria-selected', 'true');
+            
+            $(tab)
+                .addClass('is-active')
+                .attr({
+                    'aria-selected': 'true',
+                    'tabindex': '0'
+                });
         },
         
         activateTabPanel: function(panel) {

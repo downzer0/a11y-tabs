@@ -9,17 +9,17 @@
     
     <ul role="tablist" class="tabs">
         <li role="presentation" class="tab-item">
-            <button type="button" role="tab" class="tab is-active" aria-selected="true" aria-controls="one">One</button>
+            <button type="button" role="tab" class="tab is-active" aria-selected="true" aria-controls="one" tabindex="0">One</button>
         </li>
         <li role="presentation" class="tab-item">
-            <button type="button" role="tab" class="tab" aria-selected="false" aria-controls="two">Two</button>
+            <button type="button" role="tab" class="tab" aria-selected="false" aria-controls="two" tabindex="-1">Two</button>
         </li>
         <li role="presentation" class="tab-item">
-            <button type="button" role="tab" class="tab" aria-selected="false" aria-controls="three">Three</button>
+            <button type="button" role="tab" class="tab" aria-selected="false" aria-controls="three" tabindex="-1">Three</button>
         </li>
     </ul>
     
-    <div role="tabpanel" id="one" class="tab-panel is-active" tabindex="-1">
+    <div role="tabpanel" id="one" class="tab-panel is-active" tabindex="0">
         <h2>One</h2>
         <p>
             Amen, amen. But come what sorrow can,
