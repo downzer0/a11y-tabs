@@ -11,8 +11,10 @@ $(function() {
         init: function() {
             Tabs.resetTabs();
             
-            $('.tabs .tab:first').addClass('is-active');
-            $('.tab-panel:first').addClass('is-active');
+            var startTab = $('.tabs .tab-item').first().find('.tab'),
+                startPanel = $(startTab).attr('aria-controls');
+
+            Tabs.activateTab(startTab, startPanel);
             
             Tabs.keyListener();
             Tabs.clickListener();
@@ -37,7 +39,10 @@ $(function() {
                 
                 $(panel)
                     .removeClass('is-active')
-                    .attr('tabindex', '-1');
+                    .attr({
+                        'tabindex': '-1',
+                        'aria-hidden': 'true'
+                    });
             });
         },
 
@@ -138,7 +143,9 @@ $(function() {
         
         activateTabPanel: function(panel) {
             Tabs.resetTabPanels();
-            $('#' + panel).addClass('is-active');
+            $('#' + panel)
+                .addClass('is-active')
+                .attr('aria-hidden', 'false');
         }
     };
     
