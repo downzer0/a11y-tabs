@@ -14,10 +14,12 @@ body {
             border: 2px solid gray;
             background: whiteSmoke;
             font-size: 1.5rem;
+            cursor: pointer;
             
             &.is-active {
                 border-color: pink;
                 color: blue;
+                cursor: default;
             }
         }
     }
