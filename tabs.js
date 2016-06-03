@@ -13,7 +13,7 @@ $(function() {
         init: function() {
             Tabs.resetTabs();
             
-            var startTab = $('.tabs .tab-item').first().find('.tab'),
+            var startTab = $('.tabs .tab').first(),
                 startPanel = $(startTab).attr('aria-controls');
 
             Tabs.activateTab(startTab, startPanel);
@@ -28,6 +28,7 @@ $(function() {
                 
                 $(tab).removeClass('is-active').attr({
                     'aria-selected': 'false',
+                    'aria-expanded': 'false',
                     'tabindex': '-1'
                 });
             });
@@ -51,9 +52,9 @@ $(function() {
         keyListener: function() {
             $('.tabs .tab').on('keydown', function(e) {
                 var key = e.which,
-                    focused = $(e.currentTarget).parent(),
-                    index = $(e.currentTarget).parent().parent().find('.tab-item').index(focused),
-                    total = $(e.currentTarget).parent().parent().find('.tab-item').size() - 1,
+                    focused = $(e.currentTarget),
+                    index = $(e.currentTarget).parent().find('.tab').index(focused),
+                    total = $(e.currentTarget).parent().find('.tab').size() - 1,
                     panel = $(focused).attr('aria-controls');
                 
                 switch (key) {
@@ -91,11 +92,11 @@ $(function() {
             }
 
             if (index === 0) {
-                tab = $(focused).parent().parent().find('.tab-item').last().find('.tab');
+                tab = $(focused).parent().find('.tab').last();
                 panel = $(tab).attr('aria-controls');
                 
             } else {
-                tab = $(focused).parent().parent().find('.tab-item:eq(' + index + ')').prev().find('.tab');
+                tab = $(focused).parent().find('.tab:eq(' + index + ')').prev();
                 panel = $(tab).attr('aria-controls');
             }
             
@@ -113,11 +114,11 @@ $(function() {
             }
 
             if (index === total) {
-                tab = $(focused).parent().parent().find('.tab-item').first().find('.tab');
+                tab = $(focused).parent().find('.tab').first();
                 panel = $(tab).attr('aria-controls');
                 
             } else {
-                tab = $(focused).parent().parent().find('.tab-item:eq(' + index + ')').next().find('.tab');
+                tab = $(focused).parent().find('.tab:eq(' + index + ')').next();
                 panel = $(tab).attr('aria-controls');
             }
             
@@ -135,6 +136,7 @@ $(function() {
                 .addClass('is-active')
                 .attr({
                     'aria-selected': 'true',
+                    'aria-expanded': 'true',
                     'tabindex': '0'
                 });
         },
