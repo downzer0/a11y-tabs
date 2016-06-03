@@ -28,6 +28,7 @@ $(function() {
                 
                 $(tab).removeClass('is-active').attr({
                     'aria-selected': 'false',
+                    'aria-expanded': 'false',
                     'tabindex': '-1'
                 });
             });
@@ -135,6 +136,7 @@ $(function() {
                 .addClass('is-active')
                 .attr({
                     'aria-selected': 'true',
+                    'aria-expanded': 'true',
                     'tabindex': '0'
                 });
         },
